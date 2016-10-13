@@ -11,6 +11,8 @@
 #include "arm.h"
 #include "locomotor.h"
 #include "torso.h"
+#include "RobotModel.h"
+
 int main() {
     bool passed = true;
 
@@ -44,12 +46,15 @@ int main() {
     //
     // Test Robot Parts: Battery, Head, Arm, and Locomotor
     //
-    new Battery (31, 33, "TheBattery5000", 43, ComponetType::battery,13.6, 19.99, "It's an arm that can hold a cup");
+
+
     new Head(true, "RobotHead",43, ComponetType::head, 13.6, 19.99, "It's an arm that can hold a cup");
     new Arm(22, 22,"RobotArm",43, ComponetType::arm, 13.6, 19.99, "It's an arm that can hold a cup");
     new Locomotor(22 ,"RobotLocomotor",43, ComponetType::locomotor, 13.6, 19.99, "It's an arm that can hold a cup");
 
-   
+
+
+
 
 
     cout << (passed ? "passed" : "failed") << endl;

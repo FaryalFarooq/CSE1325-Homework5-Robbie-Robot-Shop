@@ -28,6 +28,12 @@ public:
                       rp_description) {}
 
     int powerConsumed(int speed) {return speed;};
+
+    int getMaxSpeed(int maxSpeed) {
+        return maxSpeed;
+    }
+
+
 protected:
     int maxSpeed;
 

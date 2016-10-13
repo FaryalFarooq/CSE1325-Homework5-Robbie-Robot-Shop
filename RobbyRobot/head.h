@@ -9,14 +9,14 @@
 
 class Head: public RobotPart {
 public:
+    //Constructor
     Head(   bool h_type,
             string rp_name,
             int rp_partNumber,
             ComponetType rp_componentType, //
             double rp_weight,
             double rp_cost,
-            string rp_description
-    ):
+            string rp_description):
 
             type(h_type),
 
@@ -26,8 +26,13 @@ public:
                       rp_weight,
                       rp_cost,
                       rp_description) {}
+
+    // Getters
+    bool getType() const { return type; }
+
 protected:
-    int type;
+    bool type;
+
 
 };
 #endif //ROBBYROBOT_HEAD_H

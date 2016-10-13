@@ -5,7 +5,7 @@
 #ifndef ROBBYROBOT_COMPONETTYPE_H
 #define ROBBYROBOT_COMPONETTYPE_H
 
-
+#include "string"
 #include "std_lib_facilities.h"
 
 class ComponetType {

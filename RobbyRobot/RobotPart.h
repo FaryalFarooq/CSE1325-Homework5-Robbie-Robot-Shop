@@ -7,6 +7,7 @@
 #include "ComponetType.h"
 
 
+
 #include <iostream>
 #include <string>
 
@@ -31,12 +32,20 @@ public:
 
 
 
+    virtual string to_string();
+
+    virtual int getMaxSpeed() { return 0;};
+
+    friend ostream& operator<<(ostream& os, RobotPart& rp);
+
+
     string get_name() {return name;};
     int    get_partNumber() { return partNumber;};
     double get_weight() { return weight;};
     double get_cost() { return cost;};
     string get_description() {return description;};
 
+    const ComponetType &getComponentType() const { return componentType; }
 
 
     // Thrown on check_in if publication isn't checked out

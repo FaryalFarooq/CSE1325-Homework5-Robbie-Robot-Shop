@@ -31,6 +31,11 @@ public:
                       rp_weight,
                       rp_cost,
                       rp_description) {}
+
+// Getters
+    int getEnergy() const { return energy; }
+    int getMaxPower() const { return maxPower;}
+
 protected:
     int energy;
     int maxPower;
