@@ -38,10 +38,11 @@ void Controller::cliSubMenu(char cmd){
         cin.ignore();
         execute_cmd_create(subCmd);
     }
+    else if (cmd == 'Q'){
 
+    }
     else {
-        cerr << "Invalid command -- Back to main menu" << endl << endl;
-        cli();
+        cerr << "Invalid Command" << endl << endl;
 
     }
 
@@ -93,10 +94,46 @@ void Controller::execute_cmd_create(char cmd) {
 
         }
         if (type == 2){
-            cout << "locomotor?";
+            cout << "MaxSpeed?";
             cin >> maxHeads;
             cin.ignore();
-            //shop.createRobotPart(new Locomotor(true, name, partNumber, ComponetType::head, weight, cost, description));
+            shop.createRobotPart(new Locomotor(true, name, partNumber, ComponetType::head, weight, cost, description));
+
+        }
+        if (type == 3){
+            bool goodAmount = false;
+            int batteryCompartments = 0;
+            while (!goodAmount) {
+                cout << "batteryCompartments(1 to 3)?";
+                cin >> batteryCompartments;
+                cin.ignore();
+                if (batteryCompartments > 0 && batteryCompartments < 4) { goodAmount = true; }
+
+            }
+
+        }
+        if (type == 4){
+            int energy;
+            int maxPower;
+            cout << "energy?";
+            cin >> energy;
+            cin.ignore();
+            cout << "maxPower?";
+            cin >> maxPower;
+            cin.ignore();
+            shop.createRobotPart(new Arm(energy, maxPower ,name, partNumber, ComponetType::head, weight, cost, description));
+
+        }
+        if (type == 5){
+            int energy;
+            int maxPower;
+            cout << "energy?";
+            cin >> energy;
+            cin.ignore();
+            cout << "maxPower?";
+            cin >> maxPower;
+            cin.ignore();
+            shop.createRobotPart(new Battery(energy, maxPower ,name, partNumber, ComponetType::head, weight, cost, description));
 
         }
 

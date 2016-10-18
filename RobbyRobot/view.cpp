@@ -16,7 +16,7 @@ void View::show_main_menu() {
     cout << "1 (C)reate" << endl;
     cout << "2 (R)eport  **Coming Soon" << endl;
     cout << "3 (S)ave  **Coming Soon" << endl;
-    cout << "9 (Q)uit **Coming Soon" << endl;
+    cout << "9 (Q)uit " << endl;
     cout << endl;
 
 }
