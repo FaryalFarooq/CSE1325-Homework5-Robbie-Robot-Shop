@@ -34,7 +34,8 @@ void View::create_menu() {
     cout << "1.6 (Q)uit to Main Menu" << endl;
     cout << endl;
 
-
-
 }
+
+
+
 

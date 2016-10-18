@@ -18,6 +18,7 @@
 
 using namespace std;
 
+// Have user input a Character Command
 void Controller::cli() {
     char cmd = 'Q';
     while (cmd != 'Q') {
@@ -28,21 +29,19 @@ void Controller::cli() {
     }
 }
 
-void Controller::execute_cmd(int cmd) {
+// Users command executed
+void Controller::execute_cmd(char cmd) {
     if (cmd == 'C') {
-
-
-
     }
 
     else if(cmd == 99) {
         robotmodel.easterEgg();
     }
     else {
-        cerr << "Invalid command " << endl << endl;
+        cerr << "Invalid command" << endl << endl;
     }
 
-    }
+
 
 
 

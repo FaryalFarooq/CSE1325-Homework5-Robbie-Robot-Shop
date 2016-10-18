@@ -54,23 +54,5 @@ double RobotModel::componetCost(int partNumber) {
 
 
 
-/*Having Troble here
-double RobotModel::maxSpeed(int partNumber) {
-    if (robotParts[partNumber]->getComponentType() == "locomotor") {
-        return robotParts[partNumber]->getMaxSpeed();
-    }
-}
-
-
-virtual int RobotModel::getmaxSpeed(int partNumber){
-        maxSpeed =
-    return robotParts[partNumber]->maxSpeed();
-}
-*/
-
-/*string RobotModel::RobotPartToString( ) {
-
-} */
-
 
 

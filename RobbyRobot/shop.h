@@ -12,8 +12,6 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
 class Shop {
 public:
     void createRobotModel(RobotModel* rob);

@@ -16,7 +16,9 @@ public:
 
     double componetCost(int partNumber);
     //double maxSpeed(int partNumber);
-    int getmaxSpeed(int partNumber) {robotParts[partNumber]->getMaxSpeed();};
+    int getmaxSpeed(int partNumber) {
+        return robotParts[partNumber]->getMaxSpeed();
+    };
 
     RobotModel(const Vector<RobotPart *> &robotParts, const String &name, int modelNumber, double price);
     const Vector<RobotPart *> &getRobotParts() const;

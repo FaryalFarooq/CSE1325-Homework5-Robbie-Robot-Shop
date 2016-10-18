@@ -12,7 +12,7 @@ class Controller {
 public:
     Controller (RobotModel& rob) : robotmodel(rob), view(View(robotmodel)) {}
     void cli();
-    void execute_cmd( int cmd);
+    void execute_cmd( char cmd);
 
 private:
     RobotModel& robotmodel;
