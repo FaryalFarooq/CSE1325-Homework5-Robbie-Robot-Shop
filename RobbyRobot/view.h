@@ -12,7 +12,7 @@ public:
     View (Shop& shp) : shop(shp) {}
     void show_main_menu();
     void create_menu();
-
+    void show_parts();
 
 private:
     Shop& shop;

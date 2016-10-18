@@ -2,6 +2,8 @@
 // Created by Mary Huerta on 10/11/16.
 //
 #include "view.h"
+#include "robotPart.h"
+#include "shop.h"
 #include <iostream>
 #include <string>
 
@@ -35,6 +37,7 @@ void View::create_menu() {
     cout << endl;
 
 }
+
 
 
 

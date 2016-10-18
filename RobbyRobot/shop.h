@@ -24,11 +24,14 @@ public:
     int numberOfCustomers();
 
     void easterEggModels();
+    void printParts();
+public:
+    vector<RobotPart*> robotParts;
 
 private:
     vector<RobotModel*> robotModels;
     //vector<Customer> customers;
-    vector<RobotPart*> robotParts;
+    //vector<RobotPart*> robotParts;
 };
 
 

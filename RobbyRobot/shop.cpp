@@ -11,7 +11,7 @@
 #include "head.h"
 #include "arm.h"
 #include "battery.h"
-
+using namespace std;
 void Shop:: createRobotModel(RobotModel* rob){
     robotModels.push_back(rob);
 }
@@ -22,5 +22,12 @@ void Shop:: createRobotPart(RobotPart* robPart){
 
 int Shop::numberOfRobotModels() {
     return robotModels.size();
+}
+
+void Shop::printParts() {
+    for (int i=0; i< robotParts.size() ; ++i){
+        cout << i << " " << robotParts[i]->get_name() << endl;
+
+    }
 }
 

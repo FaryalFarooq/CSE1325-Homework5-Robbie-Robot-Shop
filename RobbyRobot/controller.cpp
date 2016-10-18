@@ -16,29 +16,36 @@
 #include <iostream>
 #include <string>
 
+//cout << shop.robotParts[0]->get_name();
+
+
+
+
 using namespace std;
 
 // Have user input a Character Command
 void Controller::cli() {
-    char cmd = 'Z';
-    while (cmd != 'Q') {
+    int cmd = -1;
+    while (cmd != 9) {
         view.show_main_menu();
         cout << "Command? ";
         cin >> cmd;
         cin.ignore();
         cliSubMenu(cmd); // Send to another Menu
+
+
     }
 }
 void Controller::cliSubMenu(char cmd){
-    char subCmd = 'Z';
-    if (cmd == 'C'){ // Ask user for command from Create Menu
+    int subCmd = -1;
+    if (cmd == 1){ // Ask user for command from Create Menu
         view.create_menu();
         cout << "Command? ";
         cin >> subCmd;
         cin.ignore();
         execute_cmd_create(subCmd);
     }
-    else if (cmd == 'Q'){
+    else if (cmd == 9){
 
     }
     else {
@@ -50,7 +57,7 @@ void Controller::cliSubMenu(char cmd){
 
 // Users command executed
 void Controller::execute_cmd_create(char cmd) {
-    if (cmd == 'C') {
+    if (cmd == 5) {
         /* name(rp_name),
             partNumber(rp_partNumber),
             componentType(rp_componentType),
@@ -138,7 +145,11 @@ void Controller::execute_cmd_create(char cmd) {
         }
 
     }
-    else if (cmd == 'Q'){
+    else if (cmd == 4)
+    {
+
+    }
+    else if (cmd == 6){
         cout << "Going back to Main Menu" << endl;
     }
 

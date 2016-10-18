@@ -19,10 +19,6 @@ string RobotPart::to_string() {
 
 }
 
-//int RobotPart::getMaxSpeed() {
-   // return -22;
-
-//}
 
 
 ostream& operator<<(ostream& os, RobotPart& rp) {
