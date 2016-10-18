@@ -66,7 +66,7 @@ void Controller::execute_cmd_create(char cmd) {
         cout << "description? " ;
         getline(cin, description);
 
-        cout << "ParNumber? #";
+        cout << "PartNumber? #";
         cin >> partNumber;
         cin.ignore();
 
@@ -83,14 +83,23 @@ void Controller::execute_cmd_create(char cmd) {
 
         cout << "type? ";
         cin >> type;
+        cin.ignore();
 
         if (type == 1){
             cout << "maxheads?";
             cin >> maxHeads;
             cin.ignore();
+            shop.createRobotPart(new Head(true, name, partNumber, ComponetType::head, weight, cost, description));
 
-            shop.
         }
+        if (type == 2){
+            cout << "locomotor?";
+            cin >> maxHeads;
+            cin.ignore();
+            //shop.createRobotPart(new Locomotor(true, name, partNumber, ComponetType::head, weight, cost, description));
+
+        }
+
     }
     else if (cmd == 'Q'){
         cout << "Going back to Main Menu" << endl;
