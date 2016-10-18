@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <vector>
-
 #include "ComponetType.h"
 
 #include "robotpart.h"
@@ -13,7 +12,16 @@
 #include "torso.h"
 #include "RobotModel.h"
 
+
+
+#include "shop.h"
+#include "controller.h"
+
 int main() {
+    Shop shop;
+    Controller controller(shop);
+    controller.cli();
+    /*
     bool passed = true;
 
     //
@@ -58,5 +66,6 @@ int main() {
 
 
     cout << (passed ? "passed" : "failed") << endl;
+     */
 }
 

@@ -4,18 +4,18 @@
 
 #ifndef ROBBYROBOT_VIEW_H
 #define ROBBYROBOT_VIEW_H
-#include "RobotModel.h"
+#include "shop.h"
 
 
 class View {
 public:
-    View (RobotModel& rob) : model(rob) {}
+    View (Shop& shp) : shop(shp) {}
     void show_main_menu();
     void create_menu();
 
 
 private:
-    RobotModel& model;
+    Shop& shop;
 
 
 };

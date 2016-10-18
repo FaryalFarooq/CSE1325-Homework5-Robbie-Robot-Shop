@@ -16,13 +16,14 @@ class Shop {
 public:
     void createRobotModel(RobotModel* rob);
     //void newCustomer(Customer cust);
+    void createRobotPart(RobotPart* robPart);
 
     void placeOrder();
 
     int numberOfRobotModels();
     int numberOfCustomers();
 
-    void easter_egg();
+    void easterEggModels();
 
 private:
     vector<RobotModel*> robotModels;

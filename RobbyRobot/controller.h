@@ -5,17 +5,18 @@
 #ifndef ROBBYROBOT_CONTROLLER_H
 #define ROBBYROBOT_CONTROLLER_H
 
-#include "RobotModel.h"
+#include "shop.h"
 #include "view.h"
 
 class Controller {
 public:
-    Controller (RobotModel& rob) : robotmodel(rob), view(View(robotmodel)) {}
+    Controller (Shop& shp) : shop(shp), view(View(shop)) {}
     void cli();
-    void execute_cmd( char cmd);
+    void cliSubMenu(char cmd);
+    void execute_cmd_create( char cmd);
 
 private:
-    RobotModel& robotmodel;
+    Shop& shop;
     View view;
 
 };

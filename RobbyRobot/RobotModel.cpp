@@ -36,8 +36,7 @@ double componetCost();
 void RobotModel::addRobotPart(RobotPart* rp){
     robotParts.push_back(rp);
 }
-
-void RobotModel::easterEgg(){
+void RobotModel::easterEggParts(){
     addRobotPart(new Head(true, "RobotHead",43, ComponetType::head, 13.6, 19.99, "It's an arm that can hold a cup"));
     addRobotPart(new Arm(22, 22,"RobotArm",43, ComponetType::arm, 13.6, 19.99, "It's an arm that can hold a cup"));
 }

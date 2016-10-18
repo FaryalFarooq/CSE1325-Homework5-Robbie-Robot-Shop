@@ -25,8 +25,7 @@ public:
     const String &getName() const;
     int getModelNumber() const;
     double getPrice() const;
-    void easterEgg();
-
+    void easterEggParts();
 
 private:
     vector<RobotPart*> robotParts;

@@ -16,6 +16,11 @@ void Shop:: createRobotModel(RobotModel* rob){
     robotModels.push_back(rob);
 }
 
+void Shop:: createRobotPart(RobotPart* robPart){
+    robotParts.push_back(robPart);
+}
+
 int Shop::numberOfRobotModels() {
     return robotModels.size();
 }
+
