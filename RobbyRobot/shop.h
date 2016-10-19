@@ -27,9 +27,9 @@ public:
     void printParts();
 public:
     vector<RobotPart*> robotParts;
-
-private:
     vector<RobotModel*> robotModels;
+private:
+    //vector<RobotModel*> robotModels;
     //vector<Customer> customers;
     //vector<RobotPart*> robotParts;
 };

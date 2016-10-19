@@ -10,7 +10,7 @@
 #include "head.h"
 #include "locomotor.h"
 
-RobotModel::RobotModel(const Vector<RobotPart *> &robotParts, const String &name, int modelNumber, double price)
+RobotModel::RobotModel( Vector<RobotPart *> &robotParts, const String &name, int modelNumber, double price)
         : robotParts(robotParts), name(name), modelNumber(modelNumber), price(price) {}
 
 const Vector<RobotPart *> &RobotModel::getRobotParts() const {
@@ -41,11 +41,11 @@ void RobotModel::easterEggParts(){
     addRobotPart(new Arm(22, 22,"RobotArm",43, ComponetType::arm, 13.6, 19.99, "It's an arm that can hold a cup"));
 }
 
-double RobotModel::componetCost(int partNumber) {
+double RobotModel::componetCost() {
     double totalCost = 0;
     for ( int i; i < robotParts.size(); i++)
     {
-        totalCost += robotParts[partNumber]->get_cost();
+        totalCost += robotParts[i]->get_cost();
     }
     return totalCost;
 }

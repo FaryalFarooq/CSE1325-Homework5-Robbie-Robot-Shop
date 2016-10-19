@@ -15,6 +15,7 @@
 #include "torso.h"
 #include <iostream>
 #include <string>
+#include <vector>
 
 //cout << shop.robotParts[0]->get_name();
 
@@ -58,6 +59,7 @@ void Controller::cliSubMenu(char cmd){
 // Users command executed
 void Controller::execute_cmd_create(char cmd) {
     if (cmd == 5) {
+        static int partNumber = 0;
         /* name(rp_name),
             partNumber(rp_partNumber),
             componentType(rp_componentType),
@@ -65,7 +67,7 @@ void Controller::execute_cmd_create(char cmd) {
             cost(rp_cost),
             description(rp_description) { } */
         String name, description;
-        int partNumber, type, maxHeads;
+        int type, maxHeads;
         double weight, cost;
 
         cout << "name? ";
@@ -73,10 +75,6 @@ void Controller::execute_cmd_create(char cmd) {
 
         cout << "description? " ;
         getline(cin, description);
-
-        cout << "PartNumber? #";
-        cin >> partNumber;
-        cin.ignore();
 
         cout << "weight? ";
         cin >> weight;
@@ -107,7 +105,7 @@ void Controller::execute_cmd_create(char cmd) {
             shop.createRobotPart(new Locomotor(true, name, partNumber, ComponetType::head, weight, cost, description));
 
         }
-        if (type == 3){
+        if (type == 3) {
             bool goodAmount = false;
             int batteryCompartments = 0;
             while (!goodAmount) {
@@ -143,11 +141,41 @@ void Controller::execute_cmd_create(char cmd) {
             shop.createRobotPart(new Battery(energy, maxPower ,name, partNumber, ComponetType::head, weight, cost, description));
 
         }
+        partNumber++;
 
     }
     else if (cmd == 4)
     {
+        string modelName;
+        cout << "name?";
+        getline(cin, modelName);
 
+        double totalCost = 0;
+        static int robotModelNumber = 0;
+        int amountOfRobotParts = 0;
+        vector<RobotPart*> robotPartsModel;
+        int item;
+        for (int i = 0; i < shop.robotParts.size(); ++i ){
+            cout << i << ". " << shop.robotParts[i]->get_name() << endl;
+        }
+        cout << "Add one part at a time. Enter 99 to stop" << endl ;
+
+
+        while (item != 99)
+        {
+
+            cout << "#";
+            cin >> item;
+            cin.ignore();
+            if (item != 99 && item < shop.robotParts.size() ) {
+                robotPartsModel.push_back(shop.robotParts[item]);
+                amountOfRobotParts++;
+                totalCost += shop.robotParts[item]->get_cost();
+            }
+        }
+
+        shop.createRobotModel(new RobotModel( robotPartsModel, modelName, robotModelNumber , totalCost ));
+        robotModelNumber++;
     }
     else if (cmd == 6){
         cout << "Going back to Main Menu" << endl;
