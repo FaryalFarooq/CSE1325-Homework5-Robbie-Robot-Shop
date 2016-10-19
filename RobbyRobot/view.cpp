@@ -37,7 +37,18 @@ void View::create_menu() {
     cout << endl;
 
 }
+void View::report_menu() {
+    cout << endl << endl;
+    cout << "  Create   " << endl;
+    cout << "-----------" << endl;
+    cout << "2.1 (O)rder" << endl;
+    cout << "2.2 (C)ustomer" << endl;
+    cout << "2.3 (S)ales Associate" << endl;
+    cout << "2.4 Robot (M)odel" << endl;
+    cout << "2.5 Robot (C)omponent" << endl;
+    cout << "2.6 (Q)uit to Main Menu" << endl;
 
+}
 
 
 

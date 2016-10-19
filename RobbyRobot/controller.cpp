@@ -37,14 +37,21 @@ void Controller::cli() {
 
     }
 }
-void Controller::cliSubMenu(char cmd){
+void Controller::cliSubMenu(int cmd){
     int subCmd = -1;
-    if (cmd == 1){ // Ask user for command from Create Menu
+    if (cmd == 1){ // User put in 1 will forward them to create menu
         view.create_menu();
         cout << "Command? ";
         cin >> subCmd;
         cin.ignore();
         execute_cmd_create(subCmd);
+    }
+    else if (cmd == 2){
+        view.report_menu();
+        cout << "Command? ";
+        cin >> subCmd;
+        cin.ignore();
+        execute_cmd_report(subCmd);
     }
     else if (cmd == 9){
 
@@ -55,9 +62,25 @@ void Controller::cliSubMenu(char cmd){
     }
 
 }
+void Controller::execute_cmd_report( int cmd) {
+    if (cmd == 5){
+        for (int i = 0; i < shop.robotParts.size(); ++i ){
+            cout << i+1 << ". " << shop.robotParts[i]->to_string() <<  endl;
+        }
+    }
+    else if (cmd == 4){
+        for (int i = 0; i < shop.robotModels.size(); ++i){
+            cout << i+1 << "." << shop.robotModels[i]->to_string() << endl;
 
-// Users command executed
-void Controller::execute_cmd_create(char cmd) {
+        }
+    }
+
+}
+
+void Controller::execute_cmd_create(int  cmd) {
+    if (cmd == 1){
+
+    }
     if (cmd == 5) {
         static int partNumber = 0;
         /* name(rp_name),
@@ -102,7 +125,7 @@ void Controller::execute_cmd_create(char cmd) {
             cout << "MaxSpeed?";
             cin >> maxHeads;
             cin.ignore();
-            shop.createRobotPart(new Locomotor(true, name, partNumber, ComponetType::head, weight, cost, description));
+            shop.createRobotPart(new Locomotor(true, name, partNumber, ComponetType::locomotor, weight, cost, description));
 
         }
         if (type == 3) {
@@ -115,6 +138,8 @@ void Controller::execute_cmd_create(char cmd) {
                 if (batteryCompartments > 0 && batteryCompartments < 4) { goodAmount = true; }
 
             }
+            shop.createRobotPart(new Torso( batteryCompartments ,name, partNumber, ComponetType::torso, weight, cost, description));
+
 
         }
         if (type == 4){
@@ -126,7 +151,7 @@ void Controller::execute_cmd_create(char cmd) {
             cout << "maxPower?";
             cin >> maxPower;
             cin.ignore();
-            shop.createRobotPart(new Arm(energy, maxPower ,name, partNumber, ComponetType::head, weight, cost, description));
+            shop.createRobotPart(new Arm(energy, maxPower ,name, partNumber, ComponetType::arm, weight, cost, description));
 
         }
         if (type == 5){
@@ -138,7 +163,7 @@ void Controller::execute_cmd_create(char cmd) {
             cout << "maxPower?";
             cin >> maxPower;
             cin.ignore();
-            shop.createRobotPart(new Battery(energy, maxPower ,name, partNumber, ComponetType::head, weight, cost, description));
+            shop.createRobotPart(new Battery(energy, maxPower ,name, partNumber, ComponetType::battery, weight, cost, description));
 
         }
         partNumber++;

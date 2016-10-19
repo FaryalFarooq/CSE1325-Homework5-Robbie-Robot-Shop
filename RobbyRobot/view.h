@@ -13,6 +13,7 @@ public:
     void show_main_menu();
     void create_menu();
     void show_parts();
+    void report_menu();
 
 private:
     Shop& shop;

@@ -27,6 +27,9 @@ public:
     double getPrice() const;
     void easterEggParts();
 
+    string to_string();
+
+
 private:
     vector<RobotPart*> robotParts;
     string name;

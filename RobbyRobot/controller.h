@@ -12,9 +12,9 @@ class Controller {
 public:
     Controller (Shop& shp) : shop(shp), view(View(shop)) {}
     void cli();
-    void cliSubMenu(char cmd);
-    void execute_cmd_create( char cmd);
-
+    void cliSubMenu(int cmd);
+    void execute_cmd_create( int cmd);
+    void execute_cmd_report( int cmd);
 private:
     Shop& shop;
     View view;

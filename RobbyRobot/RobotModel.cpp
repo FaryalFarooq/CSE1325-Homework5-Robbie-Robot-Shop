@@ -9,6 +9,7 @@
 #include "battery.h"
 #include "head.h"
 #include "locomotor.h"
+#include "ComponetType.h"
 
 RobotModel::RobotModel( Vector<RobotPart *> &robotParts, const String &name, int modelNumber, double price)
         : robotParts(robotParts), name(name), modelNumber(modelNumber), price(price) {}
@@ -49,7 +50,13 @@ double RobotModel::componetCost() {
     }
     return totalCost;
 }
-
+string RobotModel::to_string(){
+    string temp = name + ":\n"  ;
+    for (int i = 0; i < robotParts.size(); ++i){
+        temp += robotParts[i]->to_string() + "\n";
+    }
+    return temp;
+}
 
 
 

@@ -14,7 +14,7 @@ using namespace std;
 
 
 string RobotPart::to_string() {
-    string rob =  name + ": " + description;
+    string rob =  "  " + name + ": " + description + " Type is "+componentType.to_string() ;
     return rob;
 
 }
