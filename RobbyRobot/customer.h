@@ -19,8 +19,9 @@ public:
 
 
 
-    int getCustomerNumber() const;
 
+    int getCustomerNumber() const;
+    String to_string();
     double getWallet() const;
 
 private:

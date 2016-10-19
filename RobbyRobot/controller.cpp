@@ -16,6 +16,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "customer.h"
+#include "salesAssoc.h"
 
 //cout << shop.robotParts[0]->get_name();
 
@@ -66,28 +68,141 @@ void Controller::cliSubMenu(int cmd){
 //Report Menu
 void Controller::execute_cmd_report( int cmd) {
     if (cmd == 1){
-        //Orders
+        cout << "Orders: " << endl;
+        for (int i = 0; i < shop.orders.size(); ++i ){
+            cout << i+1 << ". " << shop.orders[i]->to_string() <<  endl;
+        }
+    }
+    else if (cmd == 2){
+        cout << "Customers: " << endl;
+        for (int i = 0; i < shop.customer.size(); ++i ){
+            cout << i+1 << ". " << shop.customer[i]->to_string() <<  endl;
+        }
+    }
+    else if (cmd == 3){
+        cout << "Sales Associates: " << endl;
+        for (int i = 0; i < shop.salesAssoc.size(); ++i ){
+            cout << i+1 << ". " << shop.salesAssoc[i]->to_string() <<  endl;
+        }
+    }
+    else if (cmd == 4) {
+        cout << "Robot Models: " << endl;
+        for (int i = 0; i < shop.robotModels.size(); ++i) {
+            cout << i + 1 << "." << shop.robotModels[i]->to_string() << endl;
+
+        }
     }
     else if (cmd == 5){
+        cout << "Robot Parts: " << endl;
         for (int i = 0; i < shop.robotParts.size(); ++i ){
             cout << i+1 << ". " << shop.robotParts[i]->to_string() <<  endl;
         }
     }
-    else if (cmd == 4){
-        for (int i = 0; i < shop.robotModels.size(); ++i){
-            cout << i+1 << "." << shop.robotModels[i]->to_string() << endl;
-
-        }
+    else {
+        cerr << "***Invalid Command";
     }
 
 
 }
 
 void Controller::execute_cmd_create(int  cmd) {
-    if (cmd == 1){
+    if (cmd == 1) {
+        Order temp;
+
+        string date;
+        cout << "date? (mm/dd/yyyy) ";
+        getline(cin, date);
+
+        int quantity;
+        cout << "quantity? ";
+        cin >> quantity;
+        cin.ignore();
+        temp.setQuanity(quantity);
+
+        double shipping;
+        cout << "shipping? $";
+        cin >> shipping;
+        cin.ignore();
+        temp.setShipping(shipping);
+
+        double subtotal;
+        cout << "subtotal? $";
+        cin >> subtotal;
+        cin.ignore();
+        temp.setSubtotal(subtotal);
+
+        double tax;
+        cout << "tax? $";
+        cin >> tax;
+        cin.ignore();
+        temp.setTax(tax);
+
+        int cnum;
+        cout << "Customers: " << endl;
+        for (int i = 0; i < shop.customer.size(); ++i ){
+            cout << i << ". " << shop.customer[i]->to_string() <<  endl;
+        }
+        cout << "enter customer number: ";
+        cin >> cnum;
+        cin.ignore();
+        temp.setCustomer(shop.customer[cnum]);
+
+        int snum;
+        cout << "Sales Associates: " << endl;
+        for (int i = 0; i < shop.salesAssoc.size(); ++i ){
+            cout << i << ". " << shop.salesAssoc[i]->to_string() <<  endl;
+        }
+        cout << "enter sales Associate number: ";
+        cin >> snum;
+        cin.ignore();
+        temp.setSalesAssoc(shop.salesAssoc[snum]);
+
+        int mnum;
+        cout << "Robot Models: " << endl;
+        for (int i = 0; i < shop.robotModels.size(); ++i) {
+            cout << i << "." << shop.robotModels[i]->to_string() << endl;
+
+        }
+        cout << "enter sales model number: ";
+        cin >> mnum;
+        cin.ignore();
+        temp.setRobotModel(shop.robotModels[mnum]);
+
+        shop.createOrder( new Order(temp));
+
 
     }
-    if (cmd == 5) {
+    else if (cmd == 2 ){ //Create customer
+        static int customerNumber = 0;
+
+
+        string name;
+        cout << "name?";
+        getline(cin, name);
+
+        double wallet;
+        cout << "wallet?";
+        cin >> wallet;
+        cin.ignore();
+
+        shop.createCustomer( new Customer({}, name , customerNumber, wallet));
+
+        customerNumber++;
+    }
+    else if (cmd == 3 ){ //Create Sales Associate
+        static int employeeNumber = 0;
+
+
+        string name;
+        cout << "name?";
+        getline(cin, name);
+
+        shop.createSalesAssoc( new SalesAssoc( {} , name , employeeNumber));
+
+        employeeNumber++;
+    }
+
+    else if (cmd == 5) {
         static int partNumber = 0;
         /* name(rp_name),
             partNumber(rp_partNumber),

@@ -30,23 +30,18 @@ public:
     double getTax() const;
     double totalPrice();
 
+
     void setOrderNumber(int orderNumber);
-
     void setDate(const String &date);
-
     void setCustomer(Customer *customer);
-
     void setSalesAssoc(SalesAssoc *salesAssoc);
-
-    void setRobotModel(const RobotModel &robotModel);
-
+    void setRobotModel(RobotModel *robotModel);
     void setQuanity(int quanity);
-
     void setShipping(double shipping);
-
     void setSubtotal(double subtotal);
-
     void setTax(double tax);
+
+    string to_string();
 
 
 protected:
@@ -54,7 +49,7 @@ protected:
     string date;
     Customer* customer;
     SalesAssoc* salesAssoc;
-    RobotModel robotModel;
+    RobotModel* robotModel;
     int quanity;
     double shipping;
     double subtotal;

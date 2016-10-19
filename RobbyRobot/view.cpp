@@ -16,7 +16,7 @@ void View::show_main_menu() {
     cout << "===============================" << endl;
     cout << endl;
     cout << "1 (C)reate" << endl;
-    cout << "2 (R)eport  **Coming Soon" << endl;
+    cout << "2 (R)eport" << endl;
     cout << "3 (S)ave  **Coming Soon" << endl;
     cout << "9 (Q)uit " << endl;
     cout << endl;
@@ -39,7 +39,7 @@ void View::create_menu() {
 }
 void View::report_menu() {
     cout << endl << endl;
-    cout << "  Create   " << endl;
+    cout << "  Report   " << endl;
     cout << "-----------" << endl;
     cout << "2.1 (O)rder" << endl;
     cout << "2.2 (C)ustomer" << endl;

@@ -26,7 +26,7 @@ void Order::setSalesAssoc(SalesAssoc *salesAssoc) {
     Order::salesAssoc = salesAssoc;
 }
 
-void Order::setRobotModel(const RobotModel &robotModel) {
+void Order::setRobotModel(RobotModel *robotModel) {
     Order::robotModel = robotModel;
 }
 
@@ -59,9 +59,7 @@ const String &Order::getDate() const {
 
 //Getters
 
-const RobotModel &Order::getRobotModel() const {
-    return robotModel;
-}
+
 
 int Order::getQuanity() const {
     return quanity;
@@ -79,6 +77,8 @@ double Order::getTax() const {
     return tax;
 }
 
-/*double Order::totalPrice(){
-
-}*/
+string Order::to_string(){
+    string space = " ";
+    string temp =  space + "Customer: " + customer->to_string() + " Sales Associate: " + salesAssoc->to_string()  ;
+    return temp;
+}

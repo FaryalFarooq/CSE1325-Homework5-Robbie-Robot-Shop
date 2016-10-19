@@ -17,10 +17,16 @@ Customer::Customer( const vector<Order *> &orders,
                     customerNumber(customerNumber),
                     wallet(wallet) {}
 
+
 int Customer::getCustomerNumber() const {
     return customerNumber;
 }
 
 double Customer::getWallet() const {
     return wallet;
+}
+
+string Customer::to_string() {
+    string temp = name  ;
+    return temp;
 }
