@@ -1,15 +1,15 @@
 # CSE1325-Homework5-Robbie-Robot-Shop
 Robot Shop project for CSE1325
 
-Instruction Manual:                                   **************************
-                                                      *       Over View        *
-                                                      **************************
+Instruction Manual:                                   
+
+
+****OVERVIEW*****
 This is Robbie Robot Shop. Using command lines it allows a user to add new parts,
 models, employees, customers, or orders.
 
-                                                      **************************
-                                                      *       Main Menu        *
-                                                      **************************
+
+****MAIN MENU****
 
 The main menu gives you the option to create, report (print out), save, or quit (exit program).
 By starting up the program you first see the main menu:
@@ -26,11 +26,7 @@ By starting up the program you first see the main menu:
 The Program will prompt you with "Command?" enter the number next to the action and press enter.
 
 
-
-
-                                                      **************************
-                                                      * Create and Report Menu *
-                                                      **************************
+*****CREATE AND REPORT MENUS*****
 
 
 If you enter 1 or 2 you will go to either the "Create" menu or the "Report" menu. 
