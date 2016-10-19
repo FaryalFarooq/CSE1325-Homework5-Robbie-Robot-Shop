@@ -62,8 +62,13 @@ void Controller::cliSubMenu(int cmd){
     }
 
 }
+
+//Report Menu
 void Controller::execute_cmd_report( int cmd) {
-    if (cmd == 5){
+    if (cmd == 1){
+        //Orders
+    }
+    else if (cmd == 5){
         for (int i = 0; i < shop.robotParts.size(); ++i ){
             cout << i+1 << ". " << shop.robotParts[i]->to_string() <<  endl;
         }
@@ -74,6 +79,7 @@ void Controller::execute_cmd_report( int cmd) {
 
         }
     }
+
 
 }
 

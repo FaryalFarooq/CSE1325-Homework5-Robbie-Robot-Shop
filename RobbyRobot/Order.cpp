@@ -8,16 +8,7 @@
 #include "RobotModel.h"
 #include "shop.h"
 
-
-//Order::Order(int orderNumber, const String &date,  Customer customer, SalesAssoc salesAssoc,
- //            const RobotModel &robotModel, int quanity, double shipping, double subtotal, double tax) : orderNumber(
- //       orderNumber), date(date), customer(&customer), salesAssoc(&salesAssoc), robotModel(robotModel), quanity(quanity),
-  //                                                                                                      shipping(
-  //                                                                                                              shipping),
-  //                                                                                                      subtotal(
-  //                                                                                                              subtotal),
-  //                                                                                                      tax(tax) {}
-
+//Setters
 
 void Order::setOrderNumber(int orderNumber) {
     Order::orderNumber = orderNumber;
@@ -66,7 +57,7 @@ const String &Order::getDate() const {
 
 
 
-
+//Getters
 
 const RobotModel &Order::getRobotModel() const {
     return robotModel;
