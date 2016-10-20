@@ -10,9 +10,6 @@
 
 //Setters
 
-void Order::setOrderNumber(int orderNumber) {
-    Order::orderNumber = orderNumber;
-}
 
 void Order::setDate(const String &date) {
     Order::date = date;
@@ -38,9 +35,6 @@ void Order::setShipping(double shipping) {
     Order::shipping = shipping;
 }
 
-void Order::setSubtotal(double subtotal) {
-    Order::subtotal = subtotal;
-}
 
 void Order::setTax(double tax) {
     Order::tax = tax;
@@ -69,9 +63,7 @@ double Order::getShipping() const {
     return shipping;
 }
 
-double Order::getSubtotal() const {
-    return subtotal;
-}
+
 
 double Order::getTax() const {
     return tax;
@@ -81,4 +73,13 @@ string Order::to_string(){
     string space = " ";
     string temp =  space + "Customer: " + customer->to_string() + " Sales Associate: " + salesAssoc->to_string()  ;
     return temp;
+}
+
+double Order::totalPrice() {
+    double subtotal = 0;
+    double total;
+    subtotal = quanity * (robotModel->componetCost());
+    total =  (tax * subtotal) + shipping;
+
+    return total;
 }

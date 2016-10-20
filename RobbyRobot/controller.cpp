@@ -70,7 +70,11 @@ void Controller::execute_cmd_report( int cmd) {
     if (cmd == 1){
         cout << "Orders: " << endl;
         for (int i = 0; i < shop.orders.size(); ++i ){
-            cout << i+1 << ". " << shop.orders[i]->to_string() <<  endl;
+            cout << i+1 << ". "
+                 << "   Quan: " << shop.orders[i]->getQuanity()
+                 << "   Ordered on:" << shop.orders[i]->getDate()
+                 << "   Total: $ " << shop.orders[i]->totalPrice()
+                 << shop.orders[i]->to_string() <<  endl;
         }
     }
     else if (cmd == 2){
@@ -88,7 +92,9 @@ void Controller::execute_cmd_report( int cmd) {
     else if (cmd == 4) {
         cout << "Robot Models: " << endl;
         for (int i = 0; i < shop.robotModels.size(); ++i) {
-            cout << i + 1 << "." << shop.robotModels[i]->to_string() << endl;
+            cout << i + 1 << "." << shop.robotModels[i]->to_string()
+                 << "  Subtotal:" << shop.robotModels[i]->componetCost()
+                 << endl;
 
         }
     }
@@ -97,6 +103,9 @@ void Controller::execute_cmd_report( int cmd) {
         for (int i = 0; i < shop.robotParts.size(); ++i ){
             cout << i+1 << ". " << shop.robotParts[i]->to_string() <<  endl;
         }
+    }
+    else if (cmd == 6){
+
     }
     else {
         cerr << "***Invalid Command";
@@ -124,12 +133,6 @@ void Controller::execute_cmd_create(int  cmd) {
         cin >> shipping;
         cin.ignore();
         temp.setShipping(shipping);
-
-        double subtotal;
-        cout << "subtotal? $";
-        cin >> subtotal;
-        cin.ignore();
-        temp.setSubtotal(subtotal);
 
         double tax;
         cout << "tax? $";
@@ -204,12 +207,7 @@ void Controller::execute_cmd_create(int  cmd) {
 
     else if (cmd == 5) {
         static int partNumber = 0;
-        /* name(rp_name),
-            partNumber(rp_partNumber),
-            componentType(rp_componentType),
-            weight(rp_weight),
-            cost(rp_cost),
-            description(rp_description) { } */
+
         String name, description;
         int type, maxHeads;
         double weight, cost;

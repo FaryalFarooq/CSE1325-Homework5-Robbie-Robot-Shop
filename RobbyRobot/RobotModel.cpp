@@ -44,7 +44,7 @@ void RobotModel::easterEggParts(){
 
 double RobotModel::componetCost() {
     double totalCost = 0;
-    for ( int i; i < robotParts.size(); i++)
+    for ( int i = 0; i < robotParts.size(); i++)
     {
         totalCost += robotParts[i]->get_cost();
     }

@@ -30,8 +30,6 @@ public:
     double getTax() const;
     double totalPrice();
 
-
-    void setOrderNumber(int orderNumber);
     void setDate(const String &date);
     void setCustomer(Customer *customer);
     void setSalesAssoc(SalesAssoc *salesAssoc);
@@ -52,7 +50,6 @@ protected:
     RobotModel* robotModel;
     int quanity;
     double shipping;
-    double subtotal;
     double tax;
 
 
