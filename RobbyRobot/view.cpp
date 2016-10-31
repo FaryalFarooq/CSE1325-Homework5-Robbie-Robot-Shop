@@ -6,8 +6,15 @@
 #include "shop.h"
 #include <iostream>
 #include <string>
+#include "iostream"
+#include <iostream>
+#include "FL/Fl.h"
+#include "FL/Fl_Window.H"
+#include "FL/fl_Box.H"
 
 using namespace std;
+
+
 
 void View::show_main_menu() {
 
@@ -20,6 +27,7 @@ void View::show_main_menu() {
     cout << "3 (S)ave  **Coming Soon" << endl;
     cout << "9 (Q)uit " << endl;
     cout << endl;
+
 
 }
 
@@ -49,6 +57,9 @@ void View::report_menu() {
     cout << "2.6 (Q)uit to Main Menu" << endl;
 
 }
+
+View::View(Fl_Boxtype b, int W, int H, const int X, const int Y, const char *l, Shop &shop) : Fl_Box(b, X, Y, W, H, l),
+                                                                                  shop(shop) {}
 
 
 
